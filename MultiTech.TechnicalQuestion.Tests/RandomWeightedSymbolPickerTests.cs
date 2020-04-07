@@ -26,8 +26,8 @@ namespace MultiTech.TechnicalQuestion.Tests
             Assert.AreEqual(picks.Count, tries);
         }
 
-        [DataRow(1000)]
-        [DataRow(100)]
+        [DataRow(10000000)]
+        [DataRow(1000000)]
         [DataTestMethod]
         public void Pick_WeightedSymbolCollectionFactory_RandomPicksMatchesWeightDistribution(int tries)
         {
@@ -50,14 +50,14 @@ namespace MultiTech.TechnicalQuestion.Tests
                 // What is the actual predefined weight?
                 double wsWeight = symbolGroup.Key.Weight;
 
-                const double similarPcnt = 0.05;
+                const double similarPcnt = 0.01;
 
                 // The weights should be very similar. Let's say 5% similar.
                 double wsWeightMin = wsWeight - wsWeight * similarPcnt;
                 double wsWeightMax = wsWeight + wsWeight * similarPcnt;
 
-                Assert.IsTrue(wsWeight >= wsWeightMin);
-                Assert.IsTrue(wsWeight <= wsWeightMax);
+                Assert.IsTrue(avgPickWeight >= wsWeightMin);
+                Assert.IsTrue(avgPickWeight <= wsWeightMax);
             }
 
         }
