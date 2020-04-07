@@ -52,7 +52,7 @@ namespace MultiTech.TechnicalQuestion.Tests
 
                 const double similarPcnt = 0.01;
 
-                // The weights should be very similar. Let's say 5% similar.
+                // The weights should be very similar. Let's say 1% similar.
                 double wsWeightMin = wsWeight - wsWeight * similarPcnt;
                 double wsWeightMax = wsWeight + wsWeight * similarPcnt;
 
